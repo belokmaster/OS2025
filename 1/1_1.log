@@ -1,0 +1,31 @@
+raper@ubuntu:~/Desktop/1$ date
+Mon Apr  7 10:42:32 AM UTC 2025
+
+raper@ubuntu:~/Desktop/1$ sleep 10 & echo "Hello" > test.txt & sleep 20 &
+[1] 3920
+[2] 3921
+[3] 3922
+
+# [1], [2], [3] - task numbers
+# - current task
+# + previous task
+
+raper@ubuntu:~/Desktop/1$ jobs
+[1]   Running                 sleep 10 &
+[2]-  Done                    echo "Hello" > test.txt
+[3]+  Running                 sleep 20 &
+
+# jobs - list of tasks
+
+raper@ubuntu:~/Desktop/1$ notify %2
+raper@ubuntu:~/Desktop/1$ fg %1
+sleep 10
+
+# fg 1 - bring a background job into the foreground
+
+raper@ubuntu:~/Desktop/1$ kill %3
+raper@ubuntu:~/Desktop/1$ jobs
+[3]+  Terminated              sleep 20
+raper@ubuntu:~/Desktop/1$ jobs
+raper@ubuntu:~/Desktop/1$ 
+

@@ -1,0 +1,71 @@
+raper@ubuntu:~/Desktop/1$ date
+Mon Apr  7 11:28:35 AM UTC 2025
+
+raper@ubuntu:~/Desktop/1$ echo $$
+2793
+raper@ubuntu:~/Desktop/1$ pstree -p -s $$
+systemd(1)───systemd(1722)───gnome-terminal-(2785)───bash(2793)───pstree(4800)
+raper@ubuntu:~/Desktop/1$ cat /proc/2793/status | grep PPid
+PPid:	2785
+raper@ubuntu:~/Desktop/1$ cat /proc/2793/status
+Name:	bash
+Umask:	0002
+State:	S (sleeping)
+Tgid:	2793
+Ngid:	0
+Pid:	2793
+PPid:	2785
+TracerPid:	0
+Uid:	1000	1000	1000	1000
+Gid:	1000	1000	1000	1000
+FDSize:	256
+Groups:	4 24 27 30 46 100 114 1000 
+NStgid:	2793
+NSpid:	2793
+NSpgid:	2793
+NSsid:	2793
+Kthread:	0
+VmPeak:	   20340 kB
+VmSize:	   20340 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	    5600 kB
+VmRSS:	    5600 kB
+RssAnon:	    1920 kB
+RssFile:	    3680 kB
+RssShmem:	       0 kB
+VmData:	    2036 kB
+VmStk:	     132 kB
+VmExe:	     956 kB
+VmLib:	    1824 kB
+VmPTE:	      60 kB
+VmSwap:	       0 kB
+HugetlbPages:	       0 kB
+CoreDumping:	0
+THP_enabled:	1
+untag_mask:	0xffffffffffffffff
+Threads:	1
+SigQ:	0/22835
+SigPnd:	0000000000000000
+ShdPnd:	0000000000000000
+SigBlk:	0000000000010000
+SigIgn:	0000000000384004
+SigCgt:	000000004b813efb
+CapInh:	0000000000000000
+CapPrm:	0000000000000000
+CapEff:	0000000000000000
+CapBnd:	000001ffffffffff
+CapAmb:	0000000000000000
+NoNewPrivs:	0
+Seccomp:	0
+Seccomp_filters:	0
+Speculation_Store_Bypass:	not vulnerable
+SpeculationIndirectBranch:	always enabled
+Cpus_allowed:	f
+Cpus_allowed_list:	0-3
+Mems_allowed:	00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001
+Mems_allowed_list:	0
+voluntary_ctxt_switches:	2594
+nonvoluntary_ctxt_switches:	21
+x86_Thread_features:	
+x86_Thread_features_locked:

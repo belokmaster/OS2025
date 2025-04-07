@@ -1,0 +1,25 @@
+raper@ubuntu:~/Desktop/1$ date
+Mon Apr  7 11:08:50 AM UTC 2025
+
+raper@ubuntu:~/Desktop/1$ id -u
+1000
+raper@ubuntu:~/Desktop/1$ ps -u root | head -n 5
+    PID TTY          TIME CMD
+      1 ?        00:00:01 systemd
+      2 ?        00:00:00 kthreadd
+      3 ?        00:00:00 pool_workqueue_release
+      4 ?        00:00:00 kworker/R-rcu_gp
+raper@ubuntu:~/Desktop/1$ sudo ps -o pid,uid,comm
+[sudo] password for raper: 
+    PID   UID COMMAND
+   4448     0 sudo
+   4449     0 ps
+raper@ubuntu:~/Desktop/1$ ps -p 1 -o pid,comm
+    PID COMMAND
+      1 systemd
+raper@ubuntu:~/Desktop/1$ cat /proc/sys/kernel/pid_max
+4194304
+raper@ubuntu:~/Desktop/1$ ps -eo pid --sort=-pid | head -n 2
+    PID
+   4404
+

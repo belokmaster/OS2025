@@ -1,0 +1,27 @@
+raper@ubuntu:~/Desktop/1$ date
+Mon Apr  7 11:17:52 AM UTC 2025
+
+raper@ubuntu:~/Desktop/1$ ps -eo pid,uid,user,ppid,comm | grep -E "^ *[0-9]+ *[0-9]+ *root" | head -n 10
+      1     0 root           0 systemd
+      2     0 root           0 kthreadd
+      3     0 root           2 pool_workqueue_release
+      4     0 root           2 kworker/R-rcu_gp
+      5     0 root           2 kworker/R-sync_wq
+      6     0 root           2 kworker/R-slub_flushwq
+      7     0 root           2 kworker/R-netns
+     10     0 root           2 kworker/0:0H-events_highpri
+     11     0 root           2 kworker/u16:0-events_power_efficient
+     12     0 root           2 kworker/R-mm_percpu_wq
+     
+raper@ubuntu:~/Desktop/1$ ps -eo pid,uid,user,ppid,comm | grep -E "^ *[0-9]+ *1000" | head -n 10
+   1722  1000 raper          1 systemd
+   1728  1000 raper       1722 (sd-pam)
+   1737  1000 raper       1722 pipewire
+   1738  1000 raper       1722 pipewire
+   1744  1000 raper       1722 wireplumber
+   1749  1000 raper       1722 pipewire-pulse
+   1759  1000 raper       1722 dbus-daemon
+   1766  1000 raper       1722 gnome-keyring-d
+   1796  1000 raper       1722 xdg-document-po
+   1808  1000 raper       1710 gdm-wayland-ses
+
