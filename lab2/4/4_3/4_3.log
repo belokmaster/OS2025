@@ -1,0 +1,11 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_3$ date
+Mon Apr  7 05:49:36 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_3$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_3$ ./main 
+Creating thread...
+Main thread [7994]: Global var = 25
+Thread [7995] received signal: 10
+Thread [7995]: Global var = 35
+Thread [7995]: Current working directory = /home/raper/Desktop/OS2025/lab2/4/4_3
+

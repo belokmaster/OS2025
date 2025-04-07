@@ -1,0 +1,86 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_4$ date
+Mon Apr  7 05:51:18 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_4$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_4$ ./main 
+Creating thread...
+Thread was started (TID=8190)!
+Thread was successfully created!
+Detaching from thread...
+Detach successful!
+Creating child...
+Child process (PID=8191) was started!
+Child was created successfully (PID=8191)!
+Start logging...
+ps before kill:
+S     PID     TID     SID COMMAND
+-    2738       -    2738 bash
+S       -    2738       - -
+-    4487       -    2738 main
+T       -    4487       - -
+T       -    4488       - -
+T       -    4489       - -
+T       -    4490       - -
+-    4618       -    2738 main
+T       -    4618       - -
+T       -    4619       - -
+T       -    4620       - -
+T       -    4621       - -
+-    5609       -    2738 htop
+T       -    5609       - -
+-    7241       -    2738 main
+T       -    7241       - -
+T       -    7242       - -
+-    7243       -    2738 clone_child
+T       -    7243       - -
+-    7369       -    2738 main
+T       -    7369       - -
+T       -    7370       - -
+-    7371       -    2738 clone_child
+S       -    7371       - -
+-    8189       -    2738 main
+S       -    8189       - -
+S       -    8190       - -
+-    8191       -    2738 child
+S       -    8191       - -
+-    8192       -    2738 sh
+S       -    8192       - -
+-    8193       -    2738 ps
+R       -    8193       - -
+ps after trying to kill child process (PID=8191):
+S     PID     TID     SID COMMAND
+-    2738       -    2738 bash
+S       -    2738       - -
+-    4487       -    2738 main
+T       -    4487       - -
+T       -    4488       - -
+T       -    4489       - -
+T       -    4490       - -
+-    4618       -    2738 main
+T       -    4618       - -
+T       -    4619       - -
+T       -    4620       - -
+T       -    4621       - -
+-    5609       -    2738 htop
+T       -    5609       - -
+-    7241       -    2738 main
+T       -    7241       - -
+T       -    7242       - -
+-    7243       -    2738 clone_child
+T       -    7243       - -
+-    7369       -    2738 main
+T       -    7369       - -
+T       -    7370       - -
+-    7371       -    2738 clone_child
+S       -    7371       - -
+-    8189       -    2738 main
+S       -    8189       - -
+S       -    8190       - -
+-    8191       -    2738 child
+Z       -    8191       - -
+-    8195       -    2738 sh
+S       -    8195       - -
+-    8196       -    2738 ps
+R       -    8196       - -
+Killed
+

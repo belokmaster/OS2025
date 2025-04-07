@@ -1,0 +1,28 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_1$ date
+Mon Apr  7 04:43:01 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_1$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_1$ ./main 
+Thread (pthread) PID=4618, TID=4619
+Thread (clone) PID=4618, TID=4621
+Main process PID=4618, TID=4618
+Thread (pthread) PID=4618, TID=4620
+    PID    SPID TTY          TIME CMD
+   4618    4618 pts/0    00:00:00 main
+   4618    4619 pts/0    00:00:00 main
+   4618    4620 pts/0    00:00:00 main
+   4618    4621 pts/0    00:00:00 main
+^X    PID    SPID TTY          TIME CMD
+   4618    4618 pts/0    00:00:00 main
+   4618    4619 pts/0    00:00:00 main
+   4618    4620 pts/0    00:00:00 main
+   4618    4621 pts/0    00:00:00 main
+^Z
+[2]+  Stopped                 ./main
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_1$ ls -l /proc/4618/task/
+total 0
+dr-xr-xr-x 7 raper raper 0 Apr  7 16:47 4618
+dr-xr-xr-x 7 raper raper 0 Apr  7 16:47 4619
+dr-xr-xr-x 7 raper raper 0 Apr  7 16:47 4620
+dr-xr-xr-x 7 raper raper 0 Apr  7 16:47 4621
+

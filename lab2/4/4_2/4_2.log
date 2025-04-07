@@ -1,0 +1,47 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_2$ date
+Mon Apr  7 04:53:19 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_2$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab2/4/4_2$ ./main 
+Main process: PID=7369, PPID=2738, TID=7369, PGID=7369, SID=2738
+
+Creating POSIX thread...
+Thread created successfully
+
+Creating clone process...
+Clone process created successfully (PID=7371)
+
+Scheduling information:
+Thread: PID=7369, PPID=2738, TID=7370, PGID=7369, SID=2738
+Thread CPU affinity: 0 1 2 3 
+Clone child: PID=7371, PPID=7369, TID=7371, PGID=7369, SID=2738
+After setpgid: PGID=7371
+    PID     TID CLS RTPRIO  NI PRI PSR %CPU STAT WCHAN                COMMAND
+   2738    2738 TS       -   0  19   0  0.0 Ss   do_wait              bash
+   4487    4487 TS       -   0  19   3  0.0 Tl   do_signal_stop       main
+   4618    4618 TS       -   0  19   1  0.0 Tl   do_signal_stop       main
+   5609    5609 TS       -   0  19   2  0.0 T    do_signal_stop       htop
+   7241    7241 TS       -   0  19   3  0.0 Tl   do_signal_stop       main
+   7243    7243 TS       -   0  19   2  0.0 T    do_signal_stop       clone_child
+   7369    7369 TS       -   0  19   3  0.0 Sl+  do_wait              main
+   7371    7371 TS       -   0  19   3  0.0 S    hrtimer_nanosleep    clone_child
+   7372    7372 TS       -   0  19   0  0.0 S+   do_wait              sh
+   7373    7373 TS       -   0  19   3  0.0 R+   -                    ps
+
+Starting monitoring...
+
+=== Monitoring iteration 1 ===
+UID          PID    PPID     LWP  C NLWP STIME TTY          TIME CMD
+raper       7369    2738    7369  0    2 17:39 pts/0    00:00:00 ./main
+raper       7369    2738    7370  0    2 17:39 pts/0    00:00:00 ./main
+raper       7371    7369    7371  0    1 17:39 pts/0    00:00:00 ./main
+
+Threads info:
+    TID    SPID PSR %CPU STAT COMMAND
+   7381    7381   2  0.0 S+   sh
+
+CPU affinity:
+pid 7383's current affinity mask: f
+^Z
+[5]+  Stopped                 ./main
+
