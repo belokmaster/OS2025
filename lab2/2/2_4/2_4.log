@@ -1,0 +1,34 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/2/2_4$ date
+Mon Apr  7 12:44:27 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/2/2_4$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab2/2/2_4$ ./main 
+Main Parent PID=10727
+[A] Child PID=10728 started (PPID=10727)
+[A] Child PID=10728 exiting
+[A] Parent: Child 10728 finished
+
+[B] Son PID=10732 created grandchild 10733
+[B] Grandchild PID=10733 (original PPID=1722)
+[C] Child PID=10736 exiting immediately
+[C] Parent: Created child 10736 (zombie)
+[C] Zombie process state:
+    PID    PPID S COMMAND
+   7671    7664 S bash
+  10727    7671 S ./main
+  10732   10727 Z [main] <defunct>
+  10733    1722 S ./main
+  10736   10727 Z [main] <defunct>
+  10737   10727 S sh -c -- ps -o pid,ppid,state,command
+  10738   10737 R ps -o pid,ppid,state,command
+[B] Grandchild PID=10733 (new PPID=1722 adopted by systemd)
+
+Final process state:
+    PID    PPID S COMMAND
+   7671    7664 S bash
+  10727    7671 S ./main
+  10732   10727 Z [main] <defunct>
+  10736   10727 Z [main] <defunct>
+  10750   10727 S sh -c -- ps -o pid,ppid,state,command
+  10751   10750 R ps -o pid,ppid,state,command
+
