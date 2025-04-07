@@ -1,0 +1,20 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/3/3_1$ date
+Mon Apr  7 01:25:19 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/3/3_1$ gcc father.c -o father
+raper@ubuntu:~/Desktop/OS2025/lab2/3/3_1$ gcc son1.c -o son1
+raper@ubuntu:~/Desktop/OS2025/lab2/3/3_1$ gcc son2.c -o son2
+raper@ubuntu:~/Desktop/OS2025/lab2/3/3_1$ gcc son3.c -o son3
+raper@ubuntu:~/Desktop/OS2025/lab2/3/3_1$ ./father 
+Son1 (PID: 13288) запущен - реакция по умолчанию
+Son2 (PID: 13289) запущен - игнорирование сигнала
+Son3 (PID: 13290) запущен - перехват сигнала
+Son1 работает...
+Son2 работает...
+Son3 работает...
+Отправка SIGUSR1 всем процессам...
+Son3 (PID: 13290) поймал сигнал 10
+Son3 завершает работу по сигналу
+Программа завершена. Проверьте файлы before.txt и after.txt
+raper@ubuntu:~/Desktop/OS2025/lab2/3/3_1$ 
+
