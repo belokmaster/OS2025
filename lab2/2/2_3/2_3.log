@@ -3,7 +3,7 @@ Mon Apr  7 12:32:52 PM UTC 2025
 
 raper@ubuntu:~/Desktop/OS2025/lab2/2/2_3$ gcc main.c -o main
 raper@ubuntu:~/Desktop/OS2025/lab2/2/2_3$ ./main 
-=== Demonstration of exec() family functions ===
+Demonstration of exec() family functions
 
 1. execl(): executing 'ls -l'
 
@@ -468,4 +468,4 @@ raper       9977    9971  0 12:38 pts/0    00:00:00 ps -ef
 Process 9976 finished with status 0
 Process 9977 finished with status 0
 
-=== All demonstrations completed ===
+All demonstrations completed

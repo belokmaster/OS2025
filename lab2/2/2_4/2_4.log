@@ -3,32 +3,36 @@ Mon Apr  7 12:44:27 PM UTC 2025
 
 raper@ubuntu:~/Desktop/OS2025/lab2/2/2_4$ gcc main.c -o main
 raper@ubuntu:~/Desktop/OS2025/lab2/2/2_4$ ./main 
-Main Parent PID=10727
-[A] Child PID=10728 started (PPID=10727)
+
+Main Parent PID=10727  # Основной родительский процесс имеет PID 10727
+
+[A] Child PID=10728 started (PPID=10727)  # Дочерний процесс с PID 10728 начал выполнение, его родитель - процесс с PID 10727
 [A] Child PID=10728 exiting
 [A] Parent: Child 10728 finished
 
-[B] Son PID=10732 created grandchild 10733
-[B] Grandchild PID=10733 (original PPID=1722)
-[C] Child PID=10736 exiting immediately
-[C] Parent: Created child 10736 (zombie)
-[C] Zombie process state:
-    PID    PPID S COMMAND
-   7671    7664 S bash
-  10727    7671 S ./main
-  10732   10727 Z [main] <defunct>
-  10733    1722 S ./main
-  10736   10727 Z [main] <defunct>
-  10737   10727 S sh -c -- ps -o pid,ppid,state,command
-  10738   10737 R ps -o pid,ppid,state,command
-[B] Grandchild PID=10733 (new PPID=1722 adopted by systemd)
+[B] Son PID=10732 created grandchild 10733  # Процесс с PID 10732 (сын) создает внука с PID 10733
+[B] Grandchild PID=10733 (original PPID=1722)  # Внук с PID 10733 имеет родителя с PPID 1722 (это не родительский процесс, а init/systemd)
 
-Final process state:
-    PID    PPID S COMMAND
-   7671    7664 S bash
-  10727    7671 S ./main
-  10732   10727 Z [main] <defunct>
-  10736   10727 Z [main] <defunct>
-  10750   10727 S sh -c -- ps -o pid,ppid,state,command
-  10751   10750 R ps -o pid,ppid,state,command
+[C] Child PID=10736 exiting immediately  # Дочерний процесс с PID 10736 немедленно завершает свою работу
+[C] Parent: Created child 10736 (zombie)  # Родительский процесс сообщает, что создал дочерний процесс с PID 10736, который стал зомби
+[C] Zombie process state:  # Состояние зомби-процессов:
+    PID    PPID S COMMAND  # Отображение столбцов с PID, PPID, состоянием процесса и командой
+   7671    7664 S bash  # Процесс bash с PID 7671, его родитель - процесс с PID 7664
+  10727    7671 S ./main  # Основной процесс с PID 10727, его родитель - процесс bash (PID 7671)
+  10732   10727 Z [main] <defunct>  # Процесс с PID 10732 (сын) стал зомби, т.к. его родитель (PID 10727) еще не вызвал wait()
+  10733    1722 S ./main  # Процесс с PID 10733 (внук) имеет родителя с PID 1722 (init/systemd)
+  10736   10727 Z [main] <defunct>  # Процесс с PID 10736 (дочерний) стал зомби, так как родитель (PID 10727) не обработал его завершение
+  10737   10727 S sh -c -- ps -o pid,ppid,state,command  # Процесс с PID 10737 - командный интерпретатор для выполнения команды ps
+  10738   10737 R ps -o pid,ppid,state,command  # Процесс с PID 10738 выполняет команду ps для отображения состояния процессов
+
+[B] Grandchild PID=10733 (new PPID=1722 adopted by systemd)  # Внук с PID 10733 был усыновлен системой (init/systemd) с новым PPID 1722
+
+Final process state:  # Финальное состояние процессов:
+    PID    PPID S COMMAND  # Отображение столбцов с PID, PPID, состоянием процесса и командой
+   7671    7664 S bash  # Процесс bash с PID 7671
+  10727    7671 S ./main  # Основной процесс с PID 10727
+  10732   10727 Z [main] <defunct>  # Зомби-процесс с PID 10732 (дочерний)
+  10736   10727 Z [main] <defunct>  # Зомби-процесс с PID 10736 (дочерний)
+  10750   10727 S sh -c -- ps -o pid,ppid,state,command  # Процесс с PID 10750 - командный интерпретатор для выполнения команды ps
+  10751   10750 R ps -o pid,ppid,state,command  # Процесс с PID 10751 выполняет команду ps для отображения состояния процессов
 

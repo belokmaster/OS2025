@@ -5,14 +5,20 @@ raper@ubuntu:~/Desktop/OS2025/lab2/2/2_2$ gcc -o father father.c
 raper@ubuntu:~/Desktop/OS2025/lab2/2/2_2$ gcc -o son son.c
 raper@ubuntu:~/Desktop/OS2025/lab2/2/2_2$ ./father ./son
 Parent (PID=9381): Starting up.
-Parent: Saving process list before fork to 'before_fork.log'...
-Parent (PID=9381): Created child with PID=9384.
+
+Parent: Saving process list before fork to 'before_fork.log'... # Родительский процесс сохраняет список процессов до выполнения fork
+Parent (PID=9381): Created child with PID=9384. # Родительский процесс создает дочерний процесс с PID 9384
+
 Child (PID=9384, PPID=9381): Executing './son'...
-Son:    PID=9384, PPID=9381
-Parent: Saving process list after fork to 'after_fork.log'...
-Parent: Waiting for child to finish...
+Son:    PID=9384, PPID=9381            #  Сообщение от дочернего процесса, показывающее его PID и PID родительского процесса
+
+Parent: Saving process list after fork to 'after_fork.log'... # Родительский процесс сохраняет список процессов после выполнения fork
+Parent: Waiting for child to finish... # Родительский процесс ожидает завершения дочернего
+
 Son: Exiting...
 Parent: Child exited normally with status 0.
-Parent: Saving process list after wait to 'after_wait.log'...
+
+Parent: Saving process list after wait to 'after_wait.log'... # Родительский процесс сохраняет список процессов после ожидания завершения дочернего
+
 Parent (PID=9381): Done.
 
