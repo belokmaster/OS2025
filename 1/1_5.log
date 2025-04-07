@@ -3,8 +3,11 @@ Mon Apr  7 11:28:35 AM UTC 2025
 
 raper@ubuntu:~/Desktop/1$ echo $$
 2793
+
 raper@ubuntu:~/Desktop/1$ pstree -p -s $$
 systemd(1)───systemd(1722)───gnome-terminal-(2785)───bash(2793)───pstree(4800)
+# Иерархия процессов
+
 raper@ubuntu:~/Desktop/1$ cat /proc/2793/status | grep PPid
 PPid:	2785
 raper@ubuntu:~/Desktop/1$ cat /proc/2793/status

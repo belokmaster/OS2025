@@ -3,23 +3,34 @@ Mon Apr  7 11:08:50 AM UTC 2025
 
 raper@ubuntu:~/Desktop/1$ id -u
 1000
+# Команда `id -u` выводит UID (User ID) текущего пользователя.
+
 raper@ubuntu:~/Desktop/1$ ps -u root | head -n 5
     PID TTY          TIME CMD
       1 ?        00:00:01 systemd
       2 ?        00:00:00 kthreadd
       3 ?        00:00:00 pool_workqueue_release
       4 ?        00:00:00 kworker/R-rcu_gp
+# Команда `ps -u root` выводит процессы, запущенные пользователем `root`.
+
 raper@ubuntu:~/Desktop/1$ sudo ps -o pid,uid,comm
 [sudo] password for raper: 
     PID   UID COMMAND
    4448     0 sudo
    4449     0 ps
+# В выводе видно, что процессы `sudo` и `ps` имеют UID 0 (пользователь root).
+
 raper@ubuntu:~/Desktop/1$ ps -p 1 -o pid,comm
     PID COMMAND
       1 systemd
+# Команда `ps -p 1` выводит информацию о процессе с PID 1. Это процесс `systemd`, который является процессом инициализации системы.
+
 raper@ubuntu:~/Desktop/1$ cat /proc/sys/kernel/pid_max
 4194304
+# Команда `cat /proc/sys/kernel/pid_max` выводит максимальный допустимый PID для процессов в системе. В данном случае это 4194304.
+
 raper@ubuntu:~/Desktop/1$ ps -eo pid --sort=-pid | head -n 2
     PID
    4404
+# Команда `ps -eo pid --sort=-pid` выводит список всех процессов с их PID, отсортированный по убыванию PID.
 

@@ -5,27 +5,35 @@ raper@ubuntu:~/Desktop/1$ sleep 10 & echo "Hello" > test.txt & sleep 20 &
 [1] 3920
 [2] 3921
 [3] 3922
-
-# [1], [2], [3] - task numbers
-# - current task
-# + previous task
+# Запускаем три задачи в фоновом режиме:
+# - sleep 10 (будет спать 10 секунд),
+# - echo "Hello" > test.txt (запишет "Hello" в файл test.txt),
+# - sleep 20 (будет спать 20 секунд).
+# Задачи получают номера [1], [2] и [3].
 
 raper@ubuntu:~/Desktop/1$ jobs
 [1]   Running                 sleep 10 &
 [2]-  Done                    echo "Hello" > test.txt
 [3]+  Running                 sleep 20 &
-
-# jobs - list of tasks
+# Список текущих задач:
+# - [1] задача sleep 10 всё ещё выполняется,
+# - [2] задача echo завершена,
+# - [3] задача sleep 20 всё ещё выполняется.
 
 raper@ubuntu:~/Desktop/1$ notify %2
+# Команда notify %2 — попытка отправить уведомление, когда задача с номером 2 завершится.
+
 raper@ubuntu:~/Desktop/1$ fg %1
 sleep 10
-
-# fg 1 - bring a background job into the foreground
+# Команда fg %1 перемещает задачу [1] в передний план, так что она теперь выполняется в активном режиме.
 
 raper@ubuntu:~/Desktop/1$ kill %3
+# Команда kill %3 завершает задачу с номером 3 (sleep 20), отправив ей сигнал завершения.
+
 raper@ubuntu:~/Desktop/1$ jobs
 [3]+  Terminated              sleep 20
 raper@ubuntu:~/Desktop/1$ jobs
 raper@ubuntu:~/Desktop/1$ 
+# Проверка задач. Задача [3] теперь помечена как "Terminated" — она была завершена.
+# После этого список задач пуст, так как все остальные задачи завершены.
 

@@ -12,6 +12,9 @@ raper@ubuntu:~/Desktop/1$ ps -eo pid,uid,user,ppid,comm | grep -E "^ *[0-9]+ *[0
      10     0 root           2 kworker/0:0H-events_highpri
      11     0 root           2 kworker/u16:0-events_power_efficient
      12     0 root           2 kworker/R-mm_percpu_wq
+# Выводит список всех процессов, где пользователь root
+# ps -eo pid,uid,user,ppid,comm — выводит выбранные столбцы: PID, UID, USER, PPID, команда
+# grep -E ... — фильтрует только те строки, где USER — root
      
 raper@ubuntu:~/Desktop/1$ ps -eo pid,uid,user,ppid,comm | grep -E "^ *[0-9]+ *1000" | head -n 10
    1722  1000 raper          1 systemd
@@ -24,4 +27,4 @@ raper@ubuntu:~/Desktop/1$ ps -eo pid,uid,user,ppid,comm | grep -E "^ *[0-9]+ *10
    1766  1000 raper       1722 gnome-keyring-d
    1796  1000 raper       1722 xdg-document-po
    1808  1000 raper       1710 gdm-wayland-ses
-
+# Аналогично, но фильтруем по UID 1000 (обычный пользователь)
