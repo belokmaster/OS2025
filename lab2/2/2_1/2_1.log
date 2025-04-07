@@ -1,0 +1,25 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/2/2_1$ date
+Mon Apr  7 12:14:28 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/2/2_1$ gcc main.c -o main
+
+raper@ubuntu:~/Desktop/OS2025/lab2/2/2_1$ ./main 
+Child process: PID = 7934, PPID = 7933
+Parent process is: PID = 7933, PPID = 7671, Child PID = 7934
+Parent progress is: 1/5
+Child: Starting calculations...
+Child progress: 1/5
+Parent progress is: 2/5
+Child progress: 2/5
+Child progress: 3/5
+Parent progress is: 3/5
+Child progress: 4/5
+Parent progress is: 4/5
+Child progress: 5/5
+Parent progress is: 5/5
+Child: Calculations finished.
+Program finished (PID = 7934)
+Parent: Waiting for child
+Child process finished. Parent continued
+Program finished (PID = 7933)
+
