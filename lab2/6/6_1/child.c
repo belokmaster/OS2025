@@ -1,14 +1,17 @@
 #include <unistd.h>
 #include <fcntl.h>
 
+// Программа открывает файл test.txt для чтения и записи, записывает строку "EXEC writes: Success\n" в файл, 
+// а затем закрывает файловый дескриптор.
+
 int main() {
-    // Open the file "test.txt" with read-write permissions
+    // Открываем файл "test.txt" с правами чтения и записи
     int fd = open("test.txt", O_RDWR);
 
-    // Write the string to the file
+    // Записываем строку в файл
     write(fd, "EXEC writes: Success\n", 20);
 
-    // Close the file descriptor
+    // Закрываем файловый дескриптор
     close(fd);
 
     return 0;

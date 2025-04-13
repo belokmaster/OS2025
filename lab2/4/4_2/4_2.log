@@ -1,21 +1,33 @@
 raper@ubuntu:~/Desktop/OS2025/lab2/4/4_2$ date
 Mon Apr  7 04:53:19 PM UTC 2025
+# Выводит текущую дату и время.
 
 raper@ubuntu:~/Desktop/OS2025/lab2/4/4_2$ gcc main.c -o main
+# Компилирует исходный код из файла main.c в исполнимый файл main.
+
 raper@ubuntu:~/Desktop/OS2025/lab2/4/4_2$ ./main 
+# Запускает скомпилированную программу.
+
 Main process: PID=7369, PPID=2738, TID=7369, PGID=7369, SID=2738
+# Печатает информацию о главном процессе: его PID, PPID, TID, PGID и SID.
 
 Creating POSIX thread...
 Thread created successfully
+# Создается POSIX-поток (новый поток выполнения).
 
 Creating clone process...
 Clone process created successfully (PID=7371)
+# Создается новый процесс с помощью `clone()`, и успешное создание этого процесса с выводом его PID.
 
 Scheduling information:
 Thread: PID=7369, PPID=2738, TID=7370, PGID=7369, SID=2738
 Thread CPU affinity: 0 1 2 3 
+# Печатает информацию о планировании и привязке CPU для потока. В данном случае потоку назначены ядра 0, 1, 2, 3.
+
 Clone child: PID=7371, PPID=7369, TID=7371, PGID=7369, SID=2738
 After setpgid: PGID=7371
+# Отображается информация о дочернем процессе, созданном с помощью `clone()`, и его группой процессов (PGID).
+
     PID     TID CLS RTPRIO  NI PRI PSR %CPU STAT WCHAN                COMMAND
    2738    2738 TS       -   0  19   0  0.0 Ss   do_wait              bash
    4487    4487 TS       -   0  19   3  0.0 Tl   do_signal_stop       main
@@ -27,21 +39,28 @@ After setpgid: PGID=7371
    7371    7371 TS       -   0  19   3  0.0 S    hrtimer_nanosleep    clone_child
    7372    7372 TS       -   0  19   0  0.0 S+   do_wait              sh
    7373    7373 TS       -   0  19   3  0.0 R+   -                    ps
+# Печатается подробная информация о состоянии процессов и потоков, включая их состояния (например, `S` для спящего состояния, `R` для работающего) и команду, которая их выполняет.
 
 Starting monitoring...
+# Начало мониторинга процессов.
 
 === Monitoring iteration 1 ===
+# Начало первой итерации мониторинга.
+
 UID          PID    PPID     LWP  C NLWP STIME TTY          TIME CMD
 raper       7369    2738    7369  0    2 17:39 pts/0    00:00:00 ./main
 raper       7369    2738    7370  0    2 17:39 pts/0    00:00:00 ./main
 raper       7371    7369    7371  0    1 17:39 pts/0    00:00:00 ./main
+# Статистика процессов на текущий момент времени: PID, PPID, LWP (ID потока), количество потоков, время старта и т. д.
 
 Threads info:
     TID    SPID PSR %CPU STAT COMMAND
    7381    7381   2  0.0 S+   sh
+# Информация о потоках, в том числе их состояние и выполняемая команда.
 
 CPU affinity:
 pid 7383's current affinity mask: f
+# Текущая маска привязки CPU для процесса с PID 7383.
+
 ^Z
 [5]+  Stopped                 ./main
-

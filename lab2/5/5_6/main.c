@@ -1,15 +1,17 @@
-/*
- * thread_default_policy.c: Determines the default scheduling policy
- * and priority for threads created within a process.
- */
-#define _GNU_SOURCE         // For syscall(SYS_gettid)
+#define _GNU_SOURCE      
 #include <stdio.h>
-#include <stdlib.h>         // exit, EXIT_FAILURE
-#include <string.h>         // strerror
-#include <pthread.h>        // pthread functions
-#include <sched.h>          // sched_* constants
-#include <unistd.h>         // sleep, getpid, usleep
-#include <sys/syscall.h>    // syscall, SYS_gettid
+#include <stdlib.h>       
+#include <string.h>   
+#include <pthread.h>        
+#include <sched.h>        
+#include <unistd.h>         
+#include <sys/syscall.h>   
+
+// Программа создает основной поток и дочерний поток, затем выводит информацию о текущих параметрах планирования каждого потока. 
+// Вначале проверяются параметры планирования основного потока, после чего создается новый дочерний поток, который выполняет 
+// свою функцию, а основной поток параллельно выполняет простую задачу. Каждый поток выводит информацию о своей политике 
+// планирования и приоритете, используя pthread_getschedparam. В конце программа ожидает завершения дочернего потока с 
+// помощью pthread_join.
 
 // Функция для вывода информации о планировании ТЕКУЩЕГО потока
 void display_current_thread_sched_info(const char* thread_name) {
@@ -30,7 +32,7 @@ void display_current_thread_sched_info(const char* thread_name) {
         (policy == SCHED_OTHER) ? "SCHED_OTHER (Normal/Default)" :
         (policy == SCHED_FIFO) ? "SCHED_FIFO (Realtime)" :
         (policy == SCHED_RR) ? "SCHED_RR (Realtime)" :
-        "Unknown/Other"; // Убраны SCHED_BATCH и SCHED_IDLE
+        "Unknown/Other";
 
     printf("[%s TID %lu, LWP %d]: Policy=%s, Static Priority=%d\n",
            thread_name, (unsigned long)self_tid, (int)syscall(SYS_gettid),

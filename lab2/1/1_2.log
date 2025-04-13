@@ -6,6 +6,8 @@ raper@ubuntu:~/Desktop/1$ nohup sleep 600 &
 # Процесс получает номер [1] и PID (идентификатор процесса) 4299
 raper@ubuntu:~/Desktop/1$ nohup: ignoring input and appending output to 'nohup.out'
 
+# nohup позволяет процессу продолжать выполняться даже после завершения сеанса (если выйти из системы).
+
 pgrep sleep
 4299
 # Команда `pgrep sleep` выводит идентификатор процесса (PID) всех запущенных процессов, которые имеют имя `sleep`.
@@ -14,8 +16,15 @@ pgrep sleep
 raper@ubuntu:~/Desktop/1$ ps aux | grep sleep
 raper       4299  0.0  0.0  16956  1968 pts/0    S    11:06   0:00 sleep 600
 raper       4302  0.0  0.0  17812  2232 pts/0    S+   11:07   0:00 grep --color=auto sleep
-# Команда `ps aux` выводит список всех процессов. В результатах видно, что процесс с PID 4299 — это ваш `sleep 600`.
+# Команда `ps aux` выводит список всех процессов. В результатах видно, что процесс с PID 4299 — это `sleep 600`.
 # Также появляется процесс с PID 4302 — это команда `grep`, которая ищет слово "sleep" среди процессов.
+
+raper@ubuntu:~/Desktop/1$ exit
+# Выходим из системы.
+
+raper@ubuntu:~/Desktop/1$ ps aux | grep sleep
+raper       4299  0.0  0.0  16956  1968 pts/0    S    11:06   0:00 sleep 600
+raper       4302  0.0  0.0  17812  2232 pts/0    S+   11:07   0:00 grep --color=auto sleep
 
 raper@ubuntu:~/Desktop/1$ kill 4299
 
@@ -28,4 +37,6 @@ raper@ubuntu:~/Desktop/1$ pgrep sleep
 
 raper@ubuntu:~/Desktop/1$ jobs
 raper@ubuntu:~/Desktop/1$ 
+
+# Итог: Команда nohup позволяет запускать процессы, которые продолжат выполняться в фоновом режиме даже после того, как сеанс будет закрыт. Это полезно для длительных задач, которые не должны завершаться при выходе из системы, таких как длительные вычисления или службы.
 
