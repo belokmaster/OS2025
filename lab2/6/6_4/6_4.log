@@ -1,0 +1,15 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_4$ date
+Sun Apr 13 01:31:04 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_4$ gcc file1.c -o file1
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_4$ gcc file2.c -o file2
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_4$ ./file1 
+[Child] global = 0
+[Child] Updated global = 42
+[Parent] global = 42
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_4$ ./file2 
+clone: Operation not permitted
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_4$ sudo ./file2 
+[Parent] PID: 5017
+[Child] PID: 1
+

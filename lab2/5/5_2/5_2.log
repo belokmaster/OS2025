@@ -1,0 +1,16 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/5/5_2$ date
+Sat Apr 12 01:06:46 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/5/5_2$ ./main
+Initial priority: 0
+Attempting to set priority to -19...
+Error: setpriority(): Permission denied
+Final priority: 0
+System process (PID 1) priority: 0
+raper@ubuntu:~/Desktop/OS2025/lab2/5/5_2$ sudo ./main
+Initial priority: 0
+Attempting to set priority to -19...
+Priority changed successfully.
+Final priority: -19
+System process (PID 1) priority: 0
+

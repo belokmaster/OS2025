@@ -1,0 +1,21 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/5$ date
+Sat Apr 12 02:13:21 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/5/5_6$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab2/5/5_6$ ./main 
+[Main Thread] Starting program.
+[Main Thread] Checking its own scheduling parameters...
+[Main TID 139760013203264, LWP 8009]: Policy=SCHED_OTHER (Normal/Default), Static Priority=0
+
+[Main Thread] Creating a child thread...
+[Main Thread] Running simple loop...
+ M -> Child thread started.
+[Child TID 139760010000064, LWP 8010]: Policy=SCHED_OTHER (Normal/Default), Static Priority=0
+ -> Child thread running simple loop...
+ C M C M C M M C M C
+[Main Thread] Waiting for child thread to join...
+
+ -> Child thread finished.
+[Main Thread] Child thread joined.
+
+[Main Thread] Program finished

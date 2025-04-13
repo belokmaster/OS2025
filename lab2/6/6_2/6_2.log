@@ -1,3 +1,16 @@
 raper@ubuntu:~/Desktop/OS2025/lab2/6/6_2$ date
 Sat Apr 12 02:37:49 PM UTC 2025
 
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_2$ gcc child.c -o child
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_2$ 
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_2$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_2$ ./main 
+Parent: Policy = 0, Nice = 0
+Child (after fork): Policy = 0, Nice = 0
+Child after exec: Policy = 0, Nice = 0
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_2$ sudo ./main
+[sudo] password for raper: 
+Parent: Policy = 2, Nice = -10
+Child (after fork): Policy = 2, Nice = -10
+Child after exec: Policy = 2, Nice = -10
+

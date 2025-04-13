@@ -1,0 +1,10 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_1$ date
+Sat Apr 12 02:24:14 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_1$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_1$ gcc child.c -o child
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_1$ ./main 
+File content:
+EXEC writes: Success
+Child writes: World
+

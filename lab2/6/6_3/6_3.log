@@ -1,0 +1,11 @@
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_3$ date
+Sun Apr 13 01:25:28 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_3$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_3$ gcc child.c -o child
+raper@ubuntu:~/Desktop/OS2025/lab2/6/6_3$ ./main 
+Child before exec:
+SIGINT handler: 0x57864e984309
+Child after exec:
+SIGINT handler: (nil) (SIG_DFL = 0x0)
+
