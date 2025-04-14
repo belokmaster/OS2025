@@ -8,3 +8,4 @@ File content:
 EXEC writes: Success
 Child writes: World
 
+// В выводе программы видно, что файл был успешно изменен дочерним процессом и программой, вызываемой через execl().

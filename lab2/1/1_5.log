@@ -8,8 +8,14 @@ raper@ubuntu:~/Desktop/1$ pstree -p -s $$
 systemd(1)───systemd(1722)───gnome-terminal-(2785)───bash(2793)───pstree(4800)
 # Иерархия процессов
 
+# bash(2793) ← запущен из gnome-terminal-(2785)
+# gnome-terminal ← запущен из systemd(1722)
+# systemd(1722) ← запущен из systemd(1) (главный PID)
+# Значит, прародитель всех процессов пользовательской сессии — systemd(1722).
+
 raper@ubuntu:~/Desktop/1$ cat /proc/2793/status | grep PPid
 PPid:	2785
+
 raper@ubuntu:~/Desktop/1$ cat /proc/2793/status
 Name:	bash
 Umask:	0002
@@ -72,3 +78,5 @@ voluntary_ctxt_switches:	2594
 nonvoluntary_ctxt_switches:	21
 x86_Thread_features:	
 x86_Thread_features_locked:
+
+# Процесс bash с PID 2793 является командной оболочкой, запущенной внутри gnome-terminal (PID 2785), который, в свою очередь, запущен в рамках пользовательской сессии systemd (PID 1722). Он работает от имени обычного пользователя (UID 1000), находится в состоянии ожидания (sleeping), использует около 5.6 МБ оперативной памяти, не обладает дополнительными привилегиями, и управляет выполнением команд, вводимых вручную в терминал.

@@ -31,6 +31,8 @@ SchedInfo get_scheduling_info() {
     sched_getparam(0, &param);
     info.priority = param.sched_priority;
     
+    // По умолчанию для процессов, создаваемых из shell, используется политика SCHED_OTHER, которая соответствует обычному времени работы процессов. 
+    // Это стандартная политика для большинства приложений.
     info.policy_name = (info.policy == SCHED_OTHER) ? "SCHED_OTHER" :
                       (info.policy == SCHED_FIFO)  ? "SCHED_FIFO" :
                       (info.policy == SCHED_RR)    ? "SCHED_RR" : "UNKNOWN";

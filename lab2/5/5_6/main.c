@@ -28,6 +28,9 @@ void display_current_thread_sched_info(const char* thread_name) {
     }
 
     // Определяем имя политики на основе стандартных POSIX значений
+    // Политика SCHED_OTHER по умолчанию в потоке будет позволять операционной системе управлять планированием, делая это динамично.
+    // Политики SCHED_FIFO и SCHED_RR с одинаковыми приоритетами будут демонстрировать различные очередности в зависимости от того, 
+    // как поток уступает процессорное время.
     const char* policy_name =
         (policy == SCHED_OTHER) ? "SCHED_OTHER (Normal/Default)" :
         (policy == SCHED_FIFO) ? "SCHED_FIFO (Realtime)" :

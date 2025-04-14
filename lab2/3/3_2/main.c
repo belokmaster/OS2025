@@ -31,9 +31,11 @@ int main() {
     // Родительский процесс
     printf("Родитель (PID=%d) ждёт второго потомка (PID=%d)...\n", getpid(), pids[1]);
     
+    // waitpid() позволяет родителю ожидать завершение конкретного дочернего процесса, в отличие от wait(), который ждёт любого дочернего процесса.
     int status;
     pid_t finished_pid = waitpid(pids[1], &status, 0);  // Ждём только второго
     
+    // WIFEXITED(status) и WEXITSTATUS(status) позволяют родителю проверить, завершился ли процесс нормально, и получить его код завершения.
     if (finished_pid == -1) {
         perror("Ошибка waitpid");
     } else if (WIFEXITED(status)) {

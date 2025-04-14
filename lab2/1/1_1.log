@@ -5,6 +5,7 @@ raper@ubuntu:~/Desktop/1$ sleep 10 & echo "Hello" > test.txt & sleep 20 &
 [1] 3920
 [2] 3921
 [3] 3922
+
 # Запускаем три задачи в фоновом режиме:
 # - sleep 10 (будет спать 10 секунд),
 # - echo "Hello" > test.txt (запишет "Hello" в файл test.txt),

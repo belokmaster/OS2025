@@ -30,7 +30,6 @@ int main(int argc, char* argv[]) {
     }
 
     if (cpid == 0) {
-        // Дочерний процесс 
         // Дочерний процесс сообщает, что будет выполнять указанный исполнимый файл.
         printf("Child (PID=%d, PPID=%d): Executing '%s'...\n", getpid(), getppid(), argv[1]);
 

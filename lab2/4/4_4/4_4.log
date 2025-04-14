@@ -4,12 +4,12 @@ Mon Apr  7 05:51:18 PM UTC 2025
 raper@ubuntu:~/Desktop/OS2025/lab2/4/4_4$ gcc main.c -o main
 raper@ubuntu:~/Desktop/OS2025/lab2/4/4_4$ ./main 
 Creating thread...
-Thread was started (TID=8190)!
+Thread was started (TID=8190)! # Программа создает нить с идентификатором 8190, и эта нить начинает работать.
 Thread was successfully created!
 Detaching from thread...
 Detach successful!
 Creating child...
-Child process (PID=8191) was started!
+Child process (PID=8191) was started! # Затем создается дочерний процесс с идентификатором 8191, который также начинает выполнять бесконечный цикл.
 Child was created successfully (PID=8191)!
 Start logging...
 ps before kill:
@@ -77,10 +77,11 @@ S       -    7371       - -
 S       -    8189       - -
 S       -    8190       - -
 -    8191       -    2738 child
-Z       -    8191       - -
+Z       -    8191       - -  дочерний процесс (PID 8191) теперь имеет статус "Z" (Zombie). Это означает, что процесс был завершен, но его родительский процесс еще не вызвал wait() или waitpid() для получения его статуса завершения. Поэтому процесс остается в статусе "Zombie".
 -    8195       -    2738 sh
 S       -    8195       - -
 -    8196       -    2738 ps
 R       -    8196       - -
 Killed
 
+# Удаление нити через kill не работает, так как нити — это части процесса и не могут быть завершены с помощью команды kill.

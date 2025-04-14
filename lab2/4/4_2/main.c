@@ -32,6 +32,9 @@ void print_info(const char* entity) {
            getsid(0));  // ID сессии
 }
 
+// POSIX (Portable Operating System Interface for Unix) — это набор стандартов, разработанных для обеспечения совместимости 
+// между операционными системами Unix-подобных платформ. 
+
 // Функция для потока (POSIX)
 void* thread_routine(void* arg) {
     prctl(PR_SET_NAME, (unsigned long)"pthread");  // Задаем имя потока
@@ -92,10 +95,12 @@ int main(void) {
         return 1;
     }
     
+    // В отличие от обычного вызова fork(), clone() позволяет точнее контролировать, какие ресурсы будут разделяться между родительским и дочерним процессом. 
+    // Здесь используются флаги CLONE_VM и CLONE_FS, которые указывают на то, что память и файловая система будут совместными между процессами.
     printf("\nCreating clone process...\n");
     pid_t child_pid = clone(clone_routine,  // Передаем функцию для выполнения в дочернем процессе
                            pchild_stack + STACK_SIZE,  // Указываем место начала стека (для stack growing вниз)
-                           SIGCHLD | CLONE_VM | CLONE_FS,  // Флаги для clone()
+                           SIGCHLD | CLONE_VM | CLONE_FS,  
                            NULL);  // Нет аргументов для дочернего процесса
     if (child_pid == -1) {  
         perror("clone");

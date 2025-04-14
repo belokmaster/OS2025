@@ -13,6 +13,7 @@ raper@ubuntu:~/Desktop/OS2025/lab2/5/5_6$ ./main
 [Child TID 139760010000064, LWP 8010]: Policy=SCHED_OTHER (Normal/Default), Static Priority=0
  -> Child thread running simple loop...
  C M C M C M M C M C
+# Поскольку оба потока работают с одинаковыми параметрами планирования, их выполнение будет чередоваться, в зависимости от того, кто получает процессорное время в каждый момент времени.
 [Main Thread] Waiting for child thread to join...
 
  -> Child thread finished.

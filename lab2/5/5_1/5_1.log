@@ -11,3 +11,9 @@ TChild running on CPU 0
 Child: policy = SCHED_OTHER, priority = 0
 CCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTTCTCTCTCCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTCTTCTCTCTCTCCTCTTCTCMain (after creation): policy = SCHED_OTHER, priority = 0
 MCTMCTMCMTCTMCMTMTCMCTMTCMCTMTCMCTMTCMCTTCMCMTMTCTCMTCMTCMTMCMCTCTMTMCTCMTCMTCCMTMCTCMCMTCMTCMTCTMCMTCTMCMTCTMCMTCTMCMTCMTCMTCMTCMTCTMCMTMTCMCTMTCMCTMTCMCTMTCMTCMTCMCTMCTMCTMCTMCTMCTMCTMCTMTCTCMCMTMTCMCTMTCTCMTMCT
+
+# Процесс, поток и дочерний процесс постоянно выводят символы: M (главный процесс), T (поток) и C (дочерний процесс).
+# Это указывает на то, что все три сущности активно выполняются на одном процессоре, НО!
+# Интерлевинг (перемешивание) вывода символов M, T, и C происходит, потому что ОС пытается делить процессорное время между всеми активными процессами (главным процессом, потоком и дочерним процессом).
+
+# Все три процесса (главный, поток, дочерний) работают на одном процессоре (CPU 0) и используют одинаковую политику планирования — SCHED_OTHER, что означает стандартное планирование с приоритетом 0.

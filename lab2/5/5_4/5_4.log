@@ -5,7 +5,11 @@ Sat Apr 12 01:28:32 PM UTC 2025
 raper@ubuntu:~/Desktop/OS2025/lab2/5/5_4$ gcc main.c -o main
 raper@ubuntu:~/Desktop/OS2025/lab2/5/5_4$ ./main
 sched_setscheduler failed: Operation not permitted
+
 raper@ubuntu:~/Desktop/OS2025/lab2/5/5_4$ sudo ./main
 Main process RR priority: 99
 Estimated RR quantum: ~1001 μs
 AAABBBBBBBBBBMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMBBBBBBBBBBBBBBBBBAAAAAAAAAAAAAAAAAAMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMAMCCCCCCMCMCMMCMMCMMCMMCMMCMMCMMCMMCMMCMMCMMCMMCMMCMMCMMCMMMMCMMCMMCMMCMMCMMCMMCMMCM
+
+# Символы "A" и "B" выводятся потоками, которые по очереди передают процессорное время друг другу. После этого главному процессу дается процессорное время для вывода "M".
+# "C" — это символ, который выводится дочерним процессом, созданным с помощью clone().

@@ -1,6 +1,8 @@
 raper@ubuntu:~/Desktop/OS2025/lab2/5/5_3$ date
 Sat Apr 12 01:14:11 PM UTC 2025
 
+# a — процессы с одинаковыми приоритетами будут выполняться по очереди. Ожидаемый результат: символы "A" и "B" будут чередоваться в выводе, если процессы не блокируются.
+
 raper@ubuntu:~/Desktop/OS2025/lab2/5/5_3$ gcc a.c -o a
 raper@ubuntu:~/Desktop/OS2025/lab2/5/5_3$ sudo ./a
 BAABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABABAB^Z
@@ -10,7 +12,7 @@ raper@ubuntu:~/Desktop/OS2025/lab2/5/5_3$ gcc b.c -o b
 raper@ubuntu:~/Desktop/OS2025/lab2/5/5_3$ ./b
 SCHED_FIFO priority range: 1 to 99
 
-
+# Программа с разными приоритетами для процессов
 raper@ubuntu:~/Desktop/OS2025/lab2/5/5_3$ gcc c.c -o c
 raper@ubuntu:~/Desktop/OS2025/lab2/5/5_3$ ./c
 LHHLLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHHLLHHLLHHLHLHLHLLHHLLHLHLHLHLHLHLHLHLHLHLHLHLHHLHLHLHLLHHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLLHLHLHLHLHLHHLLHLHLHLHHLHLHLHLLHLHHLLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLHLLHLHHLLHLHLHLHHLHLHLHLHLLHLHLH^Z

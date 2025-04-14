@@ -16,6 +16,7 @@
 #define STACK_SIZE (1024 * 1024) // Размер стека для clone-потока (1 МБ)
 
 // Функция, выполняемая pthread-потоками
+// Поток засыпает на 1 секунду, чтобы продолжать работать бесконечно, не выполняя никакой реальной работы, но оставаться активным.
 void* thread_routine(void* arg) {
     printf("Thread (pthread) PID=%d, TID=%ld\n", getpid(), syscall(SYS_gettid)); // Вывод PID и TID
     while (1) sleep(1); // Бесконечный сон — поток "живет", но ничего не делает
@@ -23,6 +24,7 @@ void* thread_routine(void* arg) {
 }
 
 // Функция, выполняемая clone-потоком
+// Подобно предыдущей функции, она выводит PID и TID, затем засыпает, не выполняя других действий.
 int clone_routine(void* arg) {
     printf("Thread (clone) PID=%d, TID=%ld\n", getpid(), syscall(SYS_gettid)); // Вывод PID и TID
     while (1) sleep(1); // Бесконечный сон
@@ -38,6 +40,7 @@ int main(void) {
     pthread_create(&thread2, NULL, thread_routine, NULL);
 
     // Выделение памяти под стек для clone-потока
+    // Первый и второй потоки начинают работать параллельно и выполняют бесконечный цикл с сном по 1 секунде.
     void *stack = malloc(STACK_SIZE);
     if (stack == NULL) {
         perror("malloc");
@@ -52,6 +55,12 @@ int main(void) {
         perror("clone");
         exit(EXIT_FAILURE);
     }
+    // Флаги, передаваемые в clone(), указывают, что новый поток будет совместно использовать с родительским процессом:
+    // CLONE_VM: Совместное использование виртуальной памяти.
+    // CLONE_FS: Совместное использование файловой системы.
+    // CLONE_FILES: Совместное использование файловых дескрипторов.
+    // CLONE_SIGHAND: Совместное использование обработчиков сигналов.
+    // CLONE_THREAD: Поток будет частью текущего процесса (не создается новый процесс).
 
     // Вывод PID и TID основного потока (main)
     printf("Main process PID=%d, TID=%ld\n", getpid(), syscall(SYS_gettid));

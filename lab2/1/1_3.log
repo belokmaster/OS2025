@@ -1,6 +1,9 @@
 raper@ubuntu:~/Desktop/1$ date
 Mon Apr  7 11:08:50 AM UTC 2025
 
+# UID (User ID) — это числовой идентификатор пользователя в системе.
+# PID (Process ID) — это уникальный идентификатор процесса, который выдает ядро при запуске любого процесса.
+
 raper@ubuntu:~/Desktop/1$ id -u
 1000
 # Команда `id -u` выводит UID (User ID) текущего пользователя.
@@ -19,6 +22,10 @@ raper@ubuntu:~/Desktop/1$ sudo ps -o pid,uid,comm
    4448     0 sudo
    4449     0 ps
 # В выводе видно, что процессы `sudo` и `ps` имеют UID 0 (пользователь root).
+# Минимальное значение UID:
+	0 — это UID пользователя root.
+	Он имеет наивысшие привилегии в системе.
+
 
 raper@ubuntu:~/Desktop/1$ ps -p 1 -o pid,comm
     PID COMMAND
