@@ -1,1 +1,1 @@
-Hello from thread
+Thread [6420] writing to file

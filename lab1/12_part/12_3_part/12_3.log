@@ -1,0 +1,17 @@
+raper@ubuntu:~/Desktop/12_part/12_3_part$ date
+Fri Mar  7 01:26:44 PM UTC 2025
+raper@ubuntu:~/Desktop/12_part/12_3_part$ chmod +x script.sh 
+raper@ubuntu:~/Desktop/12_part/12_3_part$ ./script.sh
+Создан файл custom.bin с сигнатурой 'CTM'
+Создан локальный файл магии (my_magic):
+0   string  CTM  Custom File Type: MyCTM File
+!:mime  application/x-myctm
+
+Компиляция новой базы магии...
+Новая база магии скомпилирована успешно (файл my_magic.mgc создан).
+Определение типа файла custom.bin с использованием новой базы магии:
+custom.bin: Custom File Type: MyCTM File
+
+Скрипт 12_3.sh выполнен.
+raper@ubuntu:~/Desktop/12_part/12_3_part$ 
+

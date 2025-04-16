@@ -1,0 +1,14 @@
+raper@ubuntu:~/Desktop/9_part/9_2_part$ date
+Sat Mar  1 04:17:43 PM UTC 2025
+
+raper@ubuntu:~/Desktop/9_part/9_2_part$ touch file.txt
+raper@ubuntu:~/Desktop/9_part/9_2_part$ ls -l
+total 4
+-rw-rw-r-- 1 raper raper 78 Mar  1 16:17 9_2.log
+-rw-rw-r-- 1 raper raper  0 Mar  1 16:18 file.txt
+
+raper@ubuntu:~/Desktop/9_part/9_2_part$ chmod u+s file.txt 
+raper@ubuntu:~/Desktop/9_part/9_2_part$ ls -l
+total 4
+-rw-rw-r-- 1 raper raper 78 Mar  1 16:17 9_2.log
+-rwSrw-r-- 1 raper raper  0 Mar  1 16:18 file.txt

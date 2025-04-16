@@ -1,0 +1,125 @@
+raper@ubuntu:~$ date
+Fri Mar  7 12:18:20 PM UTC 2025
+
+raper@ubuntu:~/Desktop/1_part$ uname -a
+
+Linux ubuntu 6.11.0-17-generic #17~24.04.2-Ubuntu SMP PREEMPT_DYNAMIC Mon Jan 20 22:48:29 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+
+# Задание 1
+# (-) Обычный файл
+raper@ubuntu:~/Desktop/1_part$ ls -lR / 2>/dev/null | grep '^-' | head -n 12
+
+-rw-r--r-- 1 root root   292076 Jan 20 20:47 config-6.11.0-17-generic
+-rw-r--r-- 1 root root 68395155 Feb 28 10:53 initrd.img-6.11.0-17-generic
+-rw-r--r-- 1 root root   142796 Apr  8  2024 memtest86+ia32.bin
+-rw-r--r-- 1 root root   143872 Apr  8  2024 memtest86+ia32.efi
+-rw-r--r-- 1 root root   147744 Apr  8  2024 memtest86+x64.bin
+-rw-r--r-- 1 root root   148992 Apr  8  2024 memtest86+x64.efi
+-rw------- 1 root root  9400106 Jan 20 20:47 System.map-6.11.0-17-generic
+-rw------- 1 root root 15341960 Jan 20 20:51 vmlinuz-6.11.0-17-generic
+-rw-r--r-- 1 root root     712 Feb 28 10:51 gfxblacklist.txt
+-rw------- 1 root root    8579 Feb 28 10:54 grub.cfg
+-rw-r--r-- 1 root root    1024 Feb 28 13:05 grubenv
+-rw-r--r-- 1 root root 2411806 Feb 28 10:53 unicode.pf2
+
+# (b) Специальный файл блочного устройства.
+raper@ubuntu:~/Desktop/1_part$ ls -lR / 2>/dev/null | grep 'b-' | head -n 12
+
+lrwxrwxrwx 1 root root 10 Feb 28 13:05 e87b6b5b-ba62-404a-8370-f85c845354d0 -> ../../sda1
+lrwxrwxrwx 1 root root 9 Feb 28 13:05 usb-VirtualBox_USB_Tablet-event-mouse -> ../event3
+lrwxrwxrwx 1 root root 6 Feb 28 13:05 usb-VirtualBox_USB_Tablet-mouse -> ../js0
+lrwxrwxrwx 1 root root 9 Feb 28 13:05 pci-0000:00:06.0-usb-0:1:1.0-event-mouse -> ../event3
+lrwxrwxrwx 1 root root 6 Feb 28 13:05 pci-0000:00:06.0-usb-0:1:1.0-mouse -> ../js0
+-rw-r--r--  1 root                 root                   104 Feb  5 16:08 lsb-release
+lrwxrwxrwx  1 root                 root                    39 Feb 15 08:09 resolv.conf -> ../run/systemd/resolve/stub-resolv.conf
+-rw-r--r-- 1 root root   378 Jul 18  2024 github-desktop
+-rw-r--r-- 1 root root  811 Jul 18  2024 web-data
+-rw-r--r-- 1 root root   6013 Mar 31  2024 en-ueb-g1.ctb
+-rw-r--r-- 1 root root   6597 Mar 31  2024 en-ueb-g2.ctb
+lrwxrwxrwx 1 root root  54 Mar 31  2024 10-sub-pixel-rgb.conf -> /usr/share/fontconfig/conf.avail/10-sub-pixel-rgb.conf
+
+# (c)  Файл символьного устройства 
+raper@ubuntu:~/Desktop/1_part$ ls -lR / 2>/dev/null | grep 'c-' | head -n 12
+
+crw-------  1 root  root     89,   0 Feb 28 13:05 i2c-0
+lrwxrwxrwx 1 root root  8 Feb 28 13:05 89:0 -> ../i2c-0
+c--------- 1 root  root   5, 2 Feb 28 13:05 ptmx
+lrwxrwxrwx 1 root root  33 Dec 13 17:07 gstreamer-codec-install -> /usr/libexec/pk-gstreamer-install
+-rw-r--r-- 1 root root   360 Jul 18  2024 lc-compliance
+-rw-r--r-- 1 root root   351 Jul 18  2024 lxc-attach
+-rw-r--r-- 1 root root   351 Jul 18  2024 lxc-create
+-rw-r--r-- 1 root root   354 Jul 18  2024 lxc-destroy
+-rw-r--r-- 1 root root   354 Jul 18  2024 lxc-execute
+-rw-r--r-- 1 root root   345 Jul 18  2024 lxc-stop
+-rw-r--r-- 1 root root   354 Jul 18  2024 lxc-unshare
+-rw-r--r-- 1 root root   363 Jul 18  2024 lxc-usernsexec
+
+# (d) Директория
+raper@ubuntu:~/Desktop/1_part$ ls -lR / 2>/dev/null | grep 'd-' | head -n 12
+
+lrwxrwxrwx 1 root root 10 Feb 28 13:05 7e063cdd-34e5-4e6f-a0e7-71b3ea4e4ba8 -> ../../sda2
+drwxr-xr-x  8 root                 root                  4096 Feb 15 08:09 networkd-dispatcher
+-rw-r--r--  1 root                 root                  2815 Feb 15 08:14 passwd-
+-rw-r--r--  1 root                 root                     0 Feb 15 08:09 subgid-
+-rw-r--r--  1 root                 root                     0 Feb 15 08:09 subuid-
+lrwxrwxrwx 1 root root  39 Dec  2 22:47 gdm-smartcard -> /etc/pam.d/gdm-smartcard-sssd-exclusive
+-rw-r--r-- 1 root root   357 Jul 18  2024 sbuild-abort
+-rw-r--r-- 1 root root   364 Jul 18  2024 sbuild-adduser
+-rw-r--r-- 1 root root   351 Jul 18  2024 sbuild-apt
+-rw-r--r-- 1 root root   381 Jul 18  2024 sbuild-checkpackages
+-rw-r--r-- 1 root root   357 Jul 18  2024 sbuild-clean
+-rw-r--r-- 1 root root   378 Jul 18  2024 sbuild-createchroot
+
+# (l) Символьная ссылка
+raper@ubuntu:~$ ls -lR / 2>/dev/null | grep 'l-' | head -n 12
+
+drwxr-xr-x  2 root                 root                  4096 Feb 15 08:12 libnl-3
+lrwxrwxrwx 1 root root  61 Apr 18  2024 gdm-theme.gresource -> /usr/share/gnome-shell/theme/Yaru/gnome-shell-theme.gresource
+lrwxrwxrwx 1 root root  24 Nov 24  2023 pybabel -> /usr/bin/pybabel-python3
+lrwxrwxrwx 1 root root  31 Mar 18  2024 x-terminal-emulator -> /usr/bin/gnome-terminal.wrapper
+lrwxrwxrwx 1 root root  39 Mar 31  2024 x-terminal-emulator.1.gz -> /usr/share/man/man1/gnome-terminal.1.gz
+-rw-r--r-- 1 root root   366 Jul 18  2024 signal-desktop
+-rw-r--r-- 1 root root   400 Jul 18  2024 tuxedo-control-center
+-rw-r--r-- 1 root root 1633 Jul 18  2024 kernel-5.4-outoftree-network
+-rw-r--r-- 1 root root 1302 Jul 18  2024 kernel-5.4-vanilla
+-rw-r--r-- 1 root root  516 Jul 18  2024 opencl-common
+-rw-r--r-- 1 root root  672 Jul 18  2024 opencl-intel
+-rw-r--r-- 1 root root  636 Jul 18  2024 opencl-mesa
+
+# (p) FIFO
+raper@ubuntu:~$ ls -lR / 2>/dev/null | grep 'p-' | head -n 12
+
+-rw------- 1 root root  9400106 Jan 20 20:47 System.map-6.11.0-17-generic
+crw-rw----  1 root  disk     10, 237 Feb 28 13:05 loop-control
+lrwxrwxrwx 1 root root 15 Feb 28 13:05 10:237 -> ../loop-control
+-rw-r--r--  1 root                 root                  1052 Feb 28 10:55 group-
+drwxr-xr-x  2 root                 root                  4096 Feb 15 08:12 ipp-usb
+-rw-r--r-- 1 root root 31789 Oct 11 08:05 usr.lib.snapd.snap-confine.real
+-rw-r--r-- 1 root root  558 Jul 18  2024 php-worker
+-rw-r--r-- 1 root root    0 Feb 15 08:10 usr.lib.snapd.snap-confine.real
+drwxr-xr-x 2 root root 4096 Feb 15 08:12 snap-override
+lrwxrwxrwx 1 root root  59 Mar 31  2024 10-scale-bitmap-fonts.conf -> /usr/share/fontconfig/conf.avail/10-scale-bitmap-fonts.conf
+/etc/fonts/snap-override:
+/etc/ipp-usb:
+
+# (s)  Сокет
+raper@ubuntu:~$ ls -lR / 2>/dev/null | grep 's-' | head -n 12
+
+drwxr-xr-x   2 root root  4096 Feb 26  2024 bin.usr-is-merged
+drwxr-xr-x   2 root root  4096 Apr  8  2024 lib.usr-is-merged
+drwxr-xr-x   2 root root  4096 Mar 31  2024 sbin.usr-is-merged
+/bin.usr-is-merged:
+crw-------  1 root  root     10, 234 Feb 28 13:05 btrfs-control
+drwxr-s---  2 root                 dip                   4096 Feb 15 08:12 chatscripts
+drwxr-xr-x  4 root                 root                  4096 Feb 15 08:09 dbus-1
+drwxr-xr-x  2 root                 root                  4096 Feb 28 10:53 dictionaries-common
+drwxr-xr-x  5 root                 root                  4096 Feb 15 08:12 initramfs-tools
+drwxr-xr-x  2 root                 root                  4096 Feb 15 08:12 modules-load.d
+lrwxrwxrwx  1 root                 root                    21 Feb  5 16:08 os-release -> ../usr/lib/os-release
+lrwxrwxrwx 1 root root  23 Apr  8  2024 arptables -> /usr/sbin/arptables-nft
+
+# баш-скрипт для первого задания. script.sh
+raper@ubuntu:~/Desktop/1_part$ chmod +x script.sh 
+raper@ubuntu:~/Desktop/1_part$ ./script.sh output.txt
+Результаты записаны в файл: output.txt
+

@@ -1,0 +1,21 @@
+raper@ubuntu:~/Desktop/12_part/12_2_part$ date
+Fri Mar  7 01:24:23 PM UTC 2025
+
+raper@ubuntu:~/Desktop/12_part/12_2_part$ chmod +x script.sh 
+raper@ubuntu:~/Desktop/12_part/12_2_part$ ./script.sh
+Пример вывода утилиты file без ключей
+/bin/ls: ELF 64-bit LSB pie executable, x86-64, version 1 (SYSV), dynamically linked, interpreter /lib64/ld-linux-x86-64.so.2, BuildID[sha1]=3eca7e3905b37d48cf0a88b576faa7b95cc3097b, for GNU/Linux 3.2.0, stripped
+
+Вывод MIME-типа (-i) для /bin/ls/
+/bin/ls: application/x-pie-executable; charset=binary
+
+Сокращённый вывод (-b) для /etc/passwd/
+ASCII text
+
+Вывод версии утилиты file (--version)
+file-5.45
+magic file from /etc/magic:/usr/share/misc/magic
+
+Скрипт 12_2.sh выполнен.
+
+

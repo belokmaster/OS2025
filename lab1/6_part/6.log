@@ -1,0 +1,72 @@
+raper@ubuntu:~$ date
+Sat Mar  1 01:32:24 PM UTC 2025
+
+raper@ubuntu:~/Desktop/6_part$ chmod +x script.sh 
+raper@ubuntu:~/Desktop/6_part$ ./script.sh 
+Анализ заголовка бинарного файла: /bin/ls
+Использование od:
+000000 7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00  >.ELF............<
+000010 03 00 3e 00 01 00 00 00 30 6d 00 00 00 00 00 00  >..>.....0m......<
+000020 40 00 00 00 00 00 00 00 28 24 02 00 00 00 00 00  >@.......($......<
+000030 00 00 00 00 40 00 38 00 0d 00 40 00 1f 00 1e 00  >....@.8...@.....<
+
+Использование hexdump:
+
+00000000  7f 45 4c 46 02 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
+00000010  03 00 3e 00 01 00 00 00  30 6d 00 00 00 00 00 00  |..>.....0m......|
+00000020  40 00 00 00 00 00 00 00  28 24 02 00 00 00 00 00  |@.......($......|
+00000030  00 00 00 00 40 00 38 00  0d 00 40 00 1f 00 1e 00  |....@.8...@.....|
+Создание текстового файла: text.txt
+Использование od:
+000000 48 45 4c 4c 4f 2c 20 54 45 58 54 21 0a           >HELLO, TEXT!.<
+00000d
+
+Использование hexdump:
+00000000  48 45 4c 4c 4f 2c 20 54  45 58 54 21 0a           |HELLO, TEXT!.|
+0000000d
+Анализ символической ссылки: link_text.txt
+
+Использование od:
+000000 48 45 4c 4c 4f 2c 20 54 45 58 54 21 0a           >HELLO, TEXT!.<
+00000d
+Использование hexdump:
+
+00000000  48 45 4c 4c 4f 2c 20 54  45 58 54 21 0a           |HELLO, TEXT!.|
+0000000d
+Анализ содержимого каталога: .
+
+total 12
+-rw-rw-r-- 1 raper raper 2943 Mar  1 13:33 6.log
+lrwxrwxrwx 1 raper raper    8 Mar  7 13:02 link_text.txt -> text.txt
+-rwxrwxr-x 1 raper raper 2340 Mar  7 13:01 script.sh
+-rw-rw-r-- 1 raper raper   13 Mar  7 13:02 text.txt
+Использование od:\n
+od: .: Is a directory
+000000
+Использование hexdump:
+
+hexdump: .: Is a directory
+Создание временного файла: ./temp_file.txt
+total 12
+-rw-rw-r-- 1 raper raper 2943 Mar  1 13:33 6.log
+lrwxrwxrwx 1 raper raper    8 Mar  7 13:02 link_text.txt -> text.txt
+-rwxrwxr-x 1 raper raper 2340 Mar  7 13:01 script.sh
+-rw-rw-r-- 1 raper raper    0 Mar  7 13:02 temp_file.txt
+-rw-rw-r-- 1 raper raper   13 Mar  7 13:02 text.txt
+Содержимое каталога после создания файла:\n
+od: .: Is a directory
+000000
+Удаление временного файла: ./temp_file.txt
+total 12
+-rw-rw-r-- 1 raper raper 2943 Mar  1 13:33 6.log
+lrwxrwxrwx 1 raper raper    8 Mar  7 13:02 link_text.txt -> text.txt
+-rwxrwxr-x 1 raper raper 2340 Mar  7 13:01 script.sh
+-rw-rw-r-- 1 raper raper   13 Mar  7 13:02 text.txt
+Содержимое каталога после удаления файла:\n
+od: .: Is a directory
+000000
+Очистка временных файлов
+Очистка завершена.\n
+
+raper@ubuntu:~/Desktop/6_part$ 
+

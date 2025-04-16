@@ -1,0 +1,22 @@
+raper@ubuntu:~/Desktop/9_part/9_3_part$ date
+Sat Mar  1 04:19:56 PM UTC 2025
+
+raper@ubuntu:~/Desktop/9_part/9_3_part$ touch file.txt
+raper@ubuntu:~/Desktop/9_part/9_3_part$ chmod 700 file.txt 
+raper@ubuntu:~/Desktop/9_part/9_3_part$ ls -l
+total 0
+-rw-rw-r-- 1 raper raper 0 Mar  1 16:19 9_3.log
+-rwx------ 1 raper raper 0 Mar  1 16:20 file.txt
+
+raper@ubuntu:~/Desktop/9_part/9_3_part$ chgrp adm file.txt 
+raper@ubuntu:~/Desktop/9_part/9_3_part$ ls -l
+total 0
+-rw-rw-r-- 1 raper raper 0 Mar  1 16:19 9_3.log
+-rwx------ 1 raper adm   0 Mar  1 16:20 file.txt
+
+raper@ubuntu:~/Desktop/9_part/9_3_part$ chmod 750 file.txt 
+raper@ubuntu:~/Desktop/9_part/9_3_part$ ls -l
+total 0
+-rw-rw-r-- 1 raper raper 0 Mar  1 16:19 9_3.log
+-rwxr-x--- 1 raper adm   0 Mar  1 16:20 file.txt
+

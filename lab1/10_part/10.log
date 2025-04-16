@@ -1,0 +1,23 @@
+raper@ubuntu:~/Desktop/10_part$ touch main.c
+raper@ubuntu:~/Desktop/10_part$ date
+Sat Mar  1 04:39:07 PM UTC 2025
+
+raper@ubuntu:~/Desktop/10_part$ gcc main.c -o main.out
+raper@ubuntu:~/Desktop/10_part$ ls -l
+total 20
+-rw-rw-r-- 1 raper raper     0 Mar  1 16:39 10.log
+-rw-rw-r-- 1 raper raper   457 Mar  1 16:39 main.c
+-rwxrwxr-x 1 raper raper 16264 Mar  1 16:42 main.out
+raper@ubuntu:~/Desktop/10_part$ chmod +s main.c
+raper@ubuntu:~/Desktop/10_part$ chmod +s main.out
+raper@ubuntu:~/Desktop/10_part$ ls -l main.out 
+-rwsrwsr-x 1 raper raper 16264 Mar  1 16:42 main.out
+
+raper@ubuntu:~/Desktop/10_part$ touch file.txt
+raper@ubuntu:~/Desktop/10_part$ ls -l file.txt 
+-rw-rw-r-- 1 raper raper 0 Mar  1 16:43 file.txt
+raper@ubuntu:~/Desktop/10_part$ chmod o-r file.txt 
+raper@ubuntu:~/Desktop/10_part$ l -l file.txt 
+-rw-rw---- 1 raper raper 0 Mar  1 16:43 file.txt
+
+

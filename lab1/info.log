@@ -1,0 +1,28 @@
+raper@ubuntu:~$ neofetch
+            .-/+oossssoo+/-.               raper@ubuntu 
+        `:+ssssssssssssssssss+:`           ------------ 
+      -+ssssssssssssssssssyyssss+-         OS: Ubuntu 24.04.2 LTS x86_64 
+    .ossssssssssssssssssdMMMNysssso.       Host: VirtualBox 1.2 
+   /ssssssssssshdmmNNmmyNMMMMhssssss/      Kernel: 6.11.0-19-generic 
+  +ssssssssshmydMMMMMMMNddddyssssssss+     Uptime: 2 mins 
+ /sssssssshNMMMyhhyyyyhmNMMMNhssssssss/    Packages: 1574 (dpkg), 10 (snap) 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Shell: bash 5.2.21 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   Resolution: 1280x800 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   DE: GNOME 46.0 
+ossyNMMMNyMMhsssssssssssssshmmmhssssssso   WM: Mutter 
++sssshhhyNMMNyssssssssssssyNMMMysssssss+   WM Theme: Adwaita 
+.ssssssssdMMMNhsssssssssshNMMMdssssssss.   Theme: Yaru [GTK2/3] 
+ /sssssssshNMMMyhhyyyyhdNMMMNhssssssss/    Icons: Yaru [GTK2/3] 
+  +sssssssssdmydMMMMMMMMddddyssssssss+     Terminal: gnome-terminal 
+   /ssssssssssshdmNNNNmyNMMMMhssssss/      CPU: AMD Ryzen 7 8845HS w/ Radeon 78 
+    .ossssssssssssssssssdMMMNysssso.       GPU: 00:02.0 VMware SVGA II Adapter 
+      -+sssssssssssssssssyyyssss+-         Memory: 835MiB / 5782MiB 
+        `:+ssssssssssssssssss+:`
+            .-/+oossssoo+/-.                                       
+                                                                   
+
+
+raper@ubuntu:~$ 
+raper@ubuntu:~/Desktop$ uname -a
+Linux ubuntu 6.11.0-19-generic #19~24.04.1-Ubuntu SMP PREEMPT_DYNAMIC Mon Feb 17 11:51:52 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+

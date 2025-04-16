@@ -1,0 +1,7 @@
+l /usr/bin
+d /bin.usr-is-merged
+- /boot/config-6.11.0-17-generic
+c /dev/autofs
+b /dev/loop0
+p /run/initctl
+s /run/snapd-snap.socket

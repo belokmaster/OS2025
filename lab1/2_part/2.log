@@ -1,0 +1,16 @@
+
+// check if est takoy file
+raper@ubuntu:~/Desktop/2_part$ ls -l /home/raper/Desktop/file.txt
+
+// create a hard link for this file
+raper@ubuntu:~/Desktop/2_part$ ln /home/raper/Desktop/file.txt /home/raper/Desktop/hardlink_file.txt
+
+raper@ubuntu:~/Desktop/2_part$ ln file.txt test.txt
+raper@ubuntu:~/Desktop/2_part$ ./script.sh file.txt
+
+
+// camp
+raper@ubuntu:~/Desktop/2_part$ chmod +x script.sh 
+
+raper@ubuntu:~/Desktop/2_part$ ./script.sh file.txt /home/raper/Desktop
+

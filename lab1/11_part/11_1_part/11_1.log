@@ -1,0 +1,49 @@
+raper@ubuntu:~/Desktop/11_part/11_1_part$ date
+Thu Mar  6 03:34:46 PM UTC 2025
+
+raper@ubuntu:~/Desktop/11_part/11_1_part$ df -hT
+Filesystem     Type   Size  Used Avail Use% Mounted on
+tmpfs          tmpfs  579M  1.5M  577M   1% /run
+/dev/sda2      ext4    25G  5.9G   18G  26% /
+tmpfs          tmpfs  2.9G     0  2.9G   0% /dev/shm
+tmpfs          tmpfs  5.0M  8.0K  5.0M   1% /run/lock
+tmpfs          tmpfs  579M  124K  579M   1% /run/user/1000
+
+raper@ubuntu:~/Desktop/11_part/11_1_part$ cat /etc/fstab
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a
+# device; this may be used with UUID= as a more robust way to name devices
+# that works even if disks are added and removed. See fstab(5).
+#
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/sda2 during curtin installation
+/dev/disk/by-uuid/7b631a31-af38-4e43-9834-001a9b1f6594 / ext4 defaults 0 1
+raper@ubuntu:~/Desktop/11_part/11_1_part$ lsblk -f
+NAME FSTYPE FSVER LABEL UUID                                 FSAVAIL FSUSE% MOUNTPOINTS
+loop0
+                                                                   0   100% /snap/bare/5
+loop1
+                                                                   0   100% /snap/core22/1748
+loop2
+                                                                   0   100% /snap/firefox/5751
+loop3
+                                                                   0   100% /snap/firmware-updater/167
+loop4
+                                                                   0   100% /snap/gtk-common-themes/1535
+loop5
+                                                                   0   100% /snap/snap-store/1248
+loop6
+                                                                   0   100% /snap/gnome-42-2204/202
+loop7
+                                                                   0   100% /snap/snapd/23545
+loop8
+                                                                   0   100% /snap/snapd-desktop-integration/253
+loop9
+                                                                   0   100% /snap/firefox/5836
+sda                                                                         
+├─sda1
+│                                                                           
+└─sda2
+     ext4   1.0         7b631a31-af38-4e43-9834-001a9b1f6594   17.4G    24% /
+sr0      

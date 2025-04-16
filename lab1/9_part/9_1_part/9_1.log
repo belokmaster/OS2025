@@ -1,0 +1,25 @@
+raper@ubuntu:~/Desktop/9_part/9_1_part$ date
+Sat Mar  1 04:02:26 PM UTC 2025
+
+// add new account
+raper@ubuntu:~$ sudo useradd -m kolya
+
+// dal prava
+raper@ubuntu:~$ sudo chown kolya:kolya Desktop/9_part/9_1_part
+
+raper@ubuntu:~$ sudo chown kolya:kolya Desktop/9_part/9_1_part/file1.txt 
+raper@ubuntu:~$ sudo chown kolya:kolya Desktop/9_part/9_1_part/file2.txt 
+raper@ubuntu:~$ cd Desktop/9_part/9_1_part/
+raper@ubuntu:~/Desktop/9_part/9_1_part$ ls -l
+total 4
+-rw-rw-r-- 1 raper raper 191 Mar  1 16:04 9_1.log
+-rwxr-xr-x 1 kolya kolya   0 Mar  1 16:04 file1.txt
+-rwxr-xr-x 1 kolya kolya   0 Mar  1 16:04 file2.txt
+
+raper@ubuntu:~/Desktop/9_part$ cd 9_1_part/
+raper@ubuntu:~/Desktop/9_part/9_1_part$ ls -l
+total 4
+-rw-rw-r-- 1 raper raper 191 Mar  1 16:04 9_1.log
+-rwxr-xr-x 1 kolya kolya   0 Mar  1 16:04 file1.txt
+-rwxr-xr-x 1 kolya kolya   0 Mar  1 16:04 file2.txt
+

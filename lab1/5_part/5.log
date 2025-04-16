@@ -1,0 +1,42 @@
+raper@ubuntu:~/Desktop$ date -u
+Sat Mar  1 12:49:32 PM UTC 2025
+
+// all files
+raper@ubuntu:~/Desktop$ find . -type f | head -n 3
+./file.txt
+./5_part/5.log
+./2_part/file.txt
+
+raper@ubuntu:~/Desktop$ find . -type b | head -n 3
+
+raper@ubuntu:~/Desktop$ find . -type c | head -n 3
+
+raper@ubuntu:~/Desktop$ find . -type d | head -n 3
+.
+./5_part
+./2_part
+
+raper@ubuntu:~/Desktop$ find . -type l | head -n 3
+./3_part/file3.txt
+./3_part/file1.txt
+
+raper@ubuntu:~/Desktop$ find . -type p | head -n 3
+
+raper@ubuntu:~/Desktop$ find . -type s | head -n 3
+
+// s opredelennim size
+raper@ubuntu:~/Desktop$ find . -type f -size 1M | head -n 3
+./5_part/5.log
+./2_part/2.log
+./2_part/script.sh
+
+raper@ubuntu:~/Desktop$ find . -type f -name "*.txt" | head -n 3
+./file.txt
+./2_part/file.txt
+./1_part/output.txt
+
+raper@ubuntu:~/Desktop$ find . -type f -size 1M -exec du -sh {} \; | head -n 3
+4.0K	./5_part/5.log
+4.0K	./2_part/2.log
+4.0K	./2_part/script.sh
+

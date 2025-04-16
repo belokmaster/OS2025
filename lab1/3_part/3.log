@@ -1,0 +1,22 @@
+// 1 sposob sozdaem ssilky
+raper@ubuntu:~/Desktop/3_part$ ln -s /home/raper/Desktop/3_part/file.txt /home/raper/Desktop/3_part/file1.txt
+
+// 2 sposob
+raper@ubuntu:~/Desktop/3_part$ cp -s /home/raper/Desktop/3_part/file.txt /home/raper/Desktop/3_part/file3.txt
+
+// check its
+raper@ubuntu:~/Desktop/3_part$ ls -l /home/raper/Desktop/3_part/file1.txt
+lrwxrwxrwx 1 raper raper 35 Mar  1 11:56 /home/raper/Desktop/3_part/file1.txt -> /home/raper/Desktop/3_part/file.txt
+raper@ubuntu:~/Desktop/3_part$ ls -l /home/raper/Desktop/3_part/file3.txt
+lrwxrwxrwx 1 raper raper 35 Mar  1 12:34 /home/raper/Desktop/3_part/file3.txt -> /home/raper/Desktop/3_part/file.txt
+
+// script
+raper@ubuntu:~/Desktop/3_part$ ./script.sh file.txt /home
+Ищем символические ссылки, указывающие на: /home/raper/Desktop/3_part/file.txt
+Начинаем поиск в: /home
+/home/raper/.local/share/Trash/files/file1.txt
+/home/raper/Desktop/3_part/file3.txt
+/home/raper/Desktop/3_part/file1.txt
+Общее количество символических ссылок: 3
+
+

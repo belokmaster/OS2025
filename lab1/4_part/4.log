@@ -1,0 +1,2 @@
+raper@ubuntu:~/Desktop/4_part$ ls -lRa /home/raper/ | grep file.txt | grep ^l
+

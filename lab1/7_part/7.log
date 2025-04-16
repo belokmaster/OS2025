@@ -1,0 +1,55 @@
+raper@ubuntu:~/Desktop$ date
+Sat Mar  1 01:45:18 PM UTC 2025
+
+raper@ubuntu:~/Desktop$ cd 7_part/
+raper@ubuntu:~/Desktop/7_part$ chmod +x script.sh 
+raper@ubuntu:~/Desktop/7_part$ ./script.sh 
+Создание каталога exp_dir...
+
+Начальный размер каталога exp_dir:
+stat: 4096
+du -sh:
+4.0K	exp_dir
+
+После создания пустого файла file_empty:
+stat: 4096
+du -sh:
+4.0K	exp_dir
+
+После создания файла file_content.txt с содержимым:
+stat: 4096
+du -sh:
+8.0K	exp_dir
+
+После создания подкаталога subdir:
+stat: 4096
+du -sh:
+12K	exp_dir
+
+После создания символической ссылки symlink_file.txt:
+stat: 4096
+du -sh:
+12K	exp_dir
+
+После удаления файла file_empty:
+stat: 4096
+du -sh:
+12K	exp_dir
+
+После удаления файла file_content.txt и символической ссылки:
+stat: 4096
+du -sh:
+8.0K	exp_dir
+
+После удаления подкаталога subdir:
+stat: 4096
+du -sh:
+4.0K	exp_dir
+
+Итоговый размер каталога exp_dir:
+stat: 4096
+du -sh:
+4.0K	exp_dir
+
+Удаление каталога exp_dir...
+Каталог удалён успешно.

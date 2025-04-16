@@ -1,0 +1,40 @@
+raper@ubuntu:~/Desktop/9_part/9_4_part$ date
+Sat Mar  1 04:31:52 PM UTC 2025
+
+raper@ubuntu:~/Desktop/9_part/9_4_part$ chmod +x script.sh 
+raper@ubuntu:~/Desktop/9_part/9_4_part$ ./script.sh 
+Создаем каталог access_test_dir...
+Создаем тестовый исполняемый файл access_test_dir/test_script.sh...
+
+Начальные права доступа:
+Каталог:
+drwxrwxr-x 2 raper raper 4096 Mar  1 16:35 access_test_dir
+Файл:
+-rwxrwxr-x 1 raper raper 77 Mar  1 16:35 access_test_dir/test_script.sh
+
+Операции, которые можно выполнить:
+1. Исполнение скрипта: access_test_dir/test_script.sh
+2. Чтение содержимого скрипта: cat access_test_dir/test_script.sh
+
+Изменяем права доступа к каталогу (убираем права на чтение и исполнение):
+Новые права каталога:
+d-wx------ 2 raper raper 4096 Mar  1 16:35 access_test_dir
+
+Попытка исполнения скрипта из каталога с ограниченными правами:
+Исполнение тестового скрипта...
+
+Восстанавливаем права каталога (chmod 755) и изменяем права файла (chmod 600):
+Новые права каталога:
+drwxr-xr-x 2 raper raper 4096 Mar  1 16:35 access_test_dir
+Новые права файла:
+-rw------- 1 raper raper 77 Mar  1 16:35 access_test_dir/test_script.sh
+
+Попытка исполнения скрипта с ограниченными правами на файл:
+Скрипт не может быть выполнен из-за ограниченных прав на файл.
+
+Восстанавливаем права файла для исполнения (chmod 755):
+Права файла:
+-rwxr-xr-x 1 raper raper 77 Mar  1 16:35 access_test_dir/test_script.sh
+Исполнение скрипта:
+Исполнение тестового скрипта...
+
