@@ -1,0 +1,47 @@
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_3$ ipcs -l
+
+------ Messages Limits --------
+max queues system wide = 32000
+max size of message (bytes) = 8192
+default max size of queue (bytes) = 16384
+
+------ Shared Memory Limits --------
+max number of segments = 4096
+max seg size (kbytes) = 18014398509465599
+max total shared memory (kbytes) = 18446744073709551612
+min seg size (bytes) = 1
+
+------ Semaphore Limits --------
+max number of arrays = 32000
+max semaphores per array = 32000
+max semaphores system wide = 1024000000
+max ops per semop call = 500
+semaphore max value = 32767
+
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_3$ ulimit -a
+real-time non-blocking time  (microseconds, -R) unlimited
+core file size              (blocks, -c) 0
+data seg size               (kbytes, -d) unlimited
+scheduling priority                 (-e) 0
+file size                   (blocks, -f) unlimited
+pending signals                     (-i) 22835
+max locked memory           (kbytes, -l) 740220
+max memory size             (kbytes, -m) unlimited
+open files                          (-n) 1024
+pipe size                (512 bytes, -p) 8
+POSIX message queues         (bytes, -q) 819200
+real-time priority                  (-r) 0
+stack size                  (kbytes, -s) 8192
+cpu time                   (seconds, -t) unlimited
+max user processes                  (-u) 22835
+virtual memory              (kbytes, -v) unlimited
+file locks                          (-x) unlimited
+
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_3$ ipcs -s
+
+------ Semaphore Arrays --------
+key        semid      owner      perms      nsems     
+
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_3$ cat /proc/sys/kernel/sem
+32000	1024000000	500	32000
+

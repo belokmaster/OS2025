@@ -1,0 +1,26 @@
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_2$ date
+Sun Apr 27 01:31:17 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_2$ mkfifo myfifo
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_2$ echo "Hello, world!" > myfifo
+
+# open the terminal in the current directory
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_2$ ls -l 
+total 0
+-rw-rw-r-- 1 raper raper 0 Apr 27 13:27 6_2.log
+prw-rw-r-- 1 raper raper 0 Apr 27 13:28 myfifo
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_2$ myfifo
+Command 'myfifo' not found, did you mean:
+  command 'mkfifo' from deb coreutils (9.4-2ubuntu2)
+Try: sudo apt install <deb name>
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_2$ cat myfifo
+Hello, world!
+
+# use
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_2$ ./write_fifo
+FIFO /tmp/myfifo created.
+
+raper@ubuntu:~/Desktop/OS2025/lab3/6$ cd 6_2/
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_2$ ./read_fifo
+Received: Hello fr
+
