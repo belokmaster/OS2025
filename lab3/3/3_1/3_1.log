@@ -1,0 +1,10 @@
+raper@ubuntu:~/Desktop/OS2025/lab3/3/3_1$ date
+Sun Apr 27 02:32:55 PM UTC 2025
+
+raper@ubuntu:~/Desktop/OS2025/lab3/3/3_1$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab3/3/3_1$ ./main 
+Сигнал SIGINT заблокирован. Программа ожидает...
+Сигнал SIGINT теперь разблокирован. Ожидайте сигнала...
+Завершение программы.
+
+

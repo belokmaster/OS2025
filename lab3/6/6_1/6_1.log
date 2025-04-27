@@ -1,9 +1,29 @@
-ls -l | grep txt
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_1$ date
+Sun Apr 27 02:52:14 PM UTC 2025
 
-cat test1.txt | sort | uniq
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_1$ ls -l | grep txt
+-rw-rw-r-- 1 raper raper    63 Apr 27 13:26 test1.txt
+-rw-rw-r-- 1 raper raper     0 Apr 27 13:26 test2.txt
+
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_1$ cat test1.txt | sort | uniq
+file 
+gool 
+test 
+text
+text1 
+unique
+unique 
 
 Размер атомарной записи в pipe (PIPE_BUF)
-getconf PIPE_BUF
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_1$ getconf PIPE_BUF .
+4096
 
 ОГРАНИЧЕНИЯ Максимальный размер буфера для одного pipe
-cat /proc/sys/fs/pipe-max-size
+
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_1$ cat /proc/sys/fs/pipe-max-size
+1048576
+
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_1$ gcc main.c -o main
+raper@ubuntu:~/Desktop/OS2025/lab3/6/6_1$ ./main 
+Child process received: Hello from parent!
+

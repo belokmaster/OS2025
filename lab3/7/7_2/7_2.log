@@ -1,0 +1,14 @@
+raper@ubuntu:~/Desktop/OS2025/lab3/7/7_2$ date
+Sun Apr 27 02:57:53 PM UTC 2025
+
+# first terminal
+raper@ubuntu:~/Desktop/OS2025/lab3/7/7_1$ ./server
+Received: Hello, Server!
+
+# second:
+raper@ubuntu:~/Desktop/OS2025/lab3/7/7_1$ ./server
+Bind failed: Address already in use
+raper@ubuntu:~/Desktop/OS2025/lab3/7/7_1$ ./client 
+Message sent
+raper@ubuntu:~/Desktop/OS2025/lab3/7/7_1$ 
+
