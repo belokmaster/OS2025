@@ -1,0 +1,9 @@
+ls -l | grep txt
+
+cat test1.txt | sort | uniq
+
+Размер атомарной записи в pipe (PIPE_BUF)
+getconf PIPE_BUF
+
+ОГРАНИЧЕНИЯ Максимальный размер буфера для одного pipe
+cat /proc/sys/fs/pipe-max-size
